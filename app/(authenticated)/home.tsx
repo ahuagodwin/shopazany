@@ -6,7 +6,7 @@ const HomeScreen = () => {
 
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1">
       {/* Header */}
       <View className="flex-row justify-between items-center px-4 py-3">
         <View className="flex-row gap-2">

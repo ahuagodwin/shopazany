@@ -7,4 +7,8 @@ export class Images {
     public static readonly Splash5 = require('@/assets/images/azany/splash_5.png');
     public static readonly Splash6 = require('@/assets/images/azany/splash6.png');
     public static readonly OTPModalIcon = require('@/assets/images/azany/email_icon.png');
+    public static readonly HomeIcon = require('@/assets/images/azany/icon/home.png');
+    public static readonly HistoryIcon = require('@/assets/images/azany/icon/history.png');
+    public static readonly RewardsIcon = require('@/assets/images/azany/icon/rewards.png');
+    public static readonly CurrenciesIcon = require('@/assets/images/azany/icon/currencies.png');
 }
