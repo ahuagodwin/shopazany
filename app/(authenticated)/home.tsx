@@ -1,4 +1,4 @@
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, SafeAreaView } from "react-native";
 import { useDispatch } from "react-redux";
 import { useRouter } from "expo-router";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -12,11 +12,13 @@ export default function HomeScreen() {
 
   return (
     <ProtectedRoute>
+      <SafeAreaView>
       <View>
         <Text>Welcome to Home Screen!</Text>
         <Button title="Logout" onPress={() => { dispatch(logout
             ()); router.replace("/login"); }} />
       </View>
+      </SafeAreaView>
     </ProtectedRoute>
   );
 }

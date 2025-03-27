@@ -1,7 +1,7 @@
 import { View, Image, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Images } from "@/constant/Images";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { useEffect } from "react";
 
 export default function SplashScreen() {
@@ -15,6 +15,7 @@ export default function SplashScreen() {
   
       return () => clearTimeout(timer);
     }, [router]);
+    
 
   return (
     <ImageBackground source={Images.Splash3} className="flex-1 justify-center">

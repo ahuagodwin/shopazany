@@ -10,6 +10,7 @@ import {
   import { SafeAreaView } from "react-native-safe-area-context";
   import { Images } from "@/constant/Images";
   import { AntDesign, FontAwesome } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
   
   const onboardingData = [
     {
@@ -30,6 +31,7 @@ import {
   ];
   
   const Onboarding = () => {
+    const router = useRouter();
     const [step, setStep] = useState(0);
     const isLastStep = step === onboardingData.length - 1;
   
@@ -121,7 +123,7 @@ import {
                   if (!isLastStep) {
                     animateTransition(step + 1);
                   } else {
-                    console.log("Navigate to the next screen");
+                    router.replace("/login"); 
                   }
                 }}
               >

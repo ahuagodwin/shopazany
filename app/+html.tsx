@@ -12,10 +12,10 @@ export default function Root({ children }: PropsWithChildren) {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Galaxies LMS" />
-        <meta name="author" content="Galaxies" />
-        <meta name="keywords" content="Galaxies, LMS, Learning Management System" />
-        <title>Yoga LMS</title>
+        <meta name="description" content="Shop Azany" />
+        <meta name="author" content="Shop Azany" />
+        <meta name="keywords" content="Shop Azany" />
+        <title>Shop Azany</title>
         {/*
           Disable body scrolling on web. This makes ScrollView components work closer to how they do on native.
           However, body scrolling is often nice to have for mobile web. If you want to enable it, remove this line.
