@@ -65,7 +65,7 @@ export default function SignUpScreen() {
           control={control}
           name="email"
           label="Email Address"
-          placeholder="example@example.com"
+          placeholder="godwincahua@gmail.com"
           keyboardType="email-address"
           rules={{ required: "Email is required" }}
         />
@@ -110,7 +110,7 @@ export default function SignUpScreen() {
         </View>
 
         {/* Register Link */}
-        <View className="flex-row justify-center gap-1 mt-6">
+        <View className="flex-row justify-center gap-1 mt-3">
           <Text className="text-gray-600">Already have an account? </Text>
           <TouchableOpacity>
             <Text className="text-primary font-semibold">Login</Text>

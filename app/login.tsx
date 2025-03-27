@@ -66,7 +66,7 @@ export default function Login() {
         <View className="flex-row justify-between items-center mt-3">
           <Checkbox label="Remember me" onChange={(isChecked) => console.log("Remember Me:", isChecked)} />
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.replace("/forgot_password")}>
             <Text className="text-primary text-[12.83px] font-medium">Forgot Password?</Text>
           </TouchableOpacity>
         </View>
