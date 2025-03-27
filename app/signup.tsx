@@ -112,7 +112,7 @@ export default function SignUpScreen() {
         {/* Register Link */}
         <View className="flex-row justify-center gap-1 mt-3">
           <Text className="text-gray-600">Already have an account? </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.replace("/login")}>
             <Text className="text-primary font-semibold">Login</Text>
           </TouchableOpacity>
         </View>

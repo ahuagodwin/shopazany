@@ -1,5 +1,5 @@
 import { Images } from "@/constant/Images";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { View, Modal, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
 interface OtpModalProps {
@@ -10,12 +10,26 @@ interface OtpModalProps {
 }
 
 export default function OTPModal({ isVisible, onClose, onVerify, email }: OtpModalProps) {
-  const [otp, setOtp] = useState(["", "", "", ""]);
+    const [otp, setOtp] = useState(["", "", "", ""]);
+    const inputRefs = useRef<(TextInput | null)[]>([]);
 
+  
   const handleOTPChange = (index: number, value: string) => {
-    const newOtp = [...otp];
-    newOtp[index] = value;
-    setOtp(newOtp);
+    if (/^\d?$/.test(value)) {
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+
+      if (value !== "" && index < 3) {
+        inputRefs.current[index + 1]?.focus(); // Move to the next input
+      }
+    }
+  };
+
+  const handleKeyPress = (index: number, key: string) => {
+    if (key === "Backspace" && otp[index] === "" && index > 0) {
+      inputRefs.current[index - 1]?.focus(); // Move to previous input on backspace
+    }
   };
 
   return (
@@ -30,7 +44,7 @@ export default function OTPModal({ isVisible, onClose, onVerify, email }: OtpMod
           {/*  Email */}
           <Text className="text-15 font-medium text-center mb-2">Please check your email.</Text>
           <Text className="text-12 text-[#667085] text-center mb-4 leading-[16.7px]">
-          We've sent a code to <Text className="font-semibold">chidiahua@gmail.com</Text>
+          We've sent a code to <Text className="font-semibold">{email ?  email : "chidiahua@gmail.com"}</Text>
           </Text>
 
           {/* OTP Input */}
@@ -38,11 +52,16 @@ export default function OTPModal({ isVisible, onClose, onVerify, email }: OtpMod
             {otp.map((digit, index) => (
               <TextInput
                 key={index}
-                className="w-16 h-16 border border-primary rounded-md text-center text-lg font-bold text-primary"
+                ref={(el) => (inputRefs.current[index] = el)}
+                className={`w-16 h-16 border border-primary rounded-md text-center text-lg font-bold text-primary bg-white ${
+                    digit ? "shadow-lg  border-8 border-[#F7DFDE] shadow-[#F7DFDE]" : ""
+                  }`}
                 maxLength={1}
                 keyboardType="numeric"
                 value={digit}
                 onChangeText={(value) => handleOTPChange(index, value)}
+                onKeyPress={({ nativeEvent }) => handleKeyPress(index, nativeEvent.key)}
+                autoFocus={index === 0} 
               />
             ))}
           </View>
