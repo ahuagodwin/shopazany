@@ -31,10 +31,15 @@ export default function ForgotPassword() {
   const handleVerifyOtp = (otp: string) => {
     console.log("OTP entered:", otp);
     setOtpVisible(false); // Hide the modal
+
     const userData = { username: "chidiahua", email: "test@gmail.com" };
     dispatch(setUser(userData));
-    router.replace("/home");
-  };
+
+    // Redirect to reset_password after 2 minutes
+    setTimeout(() => {
+        router.replace("/reset_password");
+    }, 2000); // 2 minutes
+    };
 
   return (
     <SafeAreaView className="flex 1 bg-white">
@@ -45,7 +50,7 @@ export default function ForgotPassword() {
         </View>
 
         {/* Title */}
-        <Text className="mt-8 text-[#2B2B2B] text-13 font-medium">Let's get you back on track</Text>
+        <Text className="mt-8 text-[#2B2B2B] text-13 font-medium uppercase">Let's get you back on track</Text>
         <Text className="text-25 text-[#545454] font-bold">Reset Your Password</Text>
         <Text className="text-[#424242] text-13 font-medium my-5">Enter your email, and we will send a 4-digit OTP to verify your identity.</Text>
 
@@ -63,6 +68,14 @@ export default function ForgotPassword() {
         <TouchableOpacity onPress={handleSubmit(onSubmit)} className="bg-primary rounded-lg py-5 mt-5">
           <Text className="text-white text-center text-13 font-semibold">Proceed</Text>
         </TouchableOpacity>
+
+         {/* Register Link */}
+                 <View className="flex-row justify-center gap-1 mt-3">
+                  <Text className="text-gray-600">Remember your password?  </Text>
+                  <TouchableOpacity onPress={() => router.replace("/login")}>
+                    <Text className="text-primary font-semibold">LOGIN HERE</Text>
+                  </TouchableOpacity>
+                </View>
 
         {/* OTP Modal */}
         <OTPModal email="" isVisible={otpVisible} onClose={() => setOtpVisible(false)} onVerify={handleVerifyOtp} />
