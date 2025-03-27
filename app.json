@@ -14,7 +14,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/azany/splash3.png",
-        // "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
@@ -30,6 +30,7 @@
           "image": "./assets/images/azany/splash3.png",
           "imageWidth": 200,
           "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
         }
       ]
     ],
