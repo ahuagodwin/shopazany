@@ -29,7 +29,7 @@ export default function PasswordField({
         rules={rules}
         render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
           <>
-            <View className={`flex-row items-center border ${error ? "border-red-500" : "border-gray-300"} rounded-lg px-4 py-1 mt-2`}>
+            <View className={`flex-row items-center h-[47px] border ${error ? "border-red-500" : "border-gray-300"} rounded-lg px-4 mt-2`}>
               <TextInput
                 placeholder={placeholder}
                 secureTextEntry={secureText}

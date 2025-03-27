@@ -36,7 +36,7 @@ export default function InputField({
             onBlur={onBlur}
               value={value}
               onChangeText={onChange}
-              className={`border border-gray-300 rounded-lg px-4 py-4 mt-2 ${
+              className={`border border-gray-300 h-[47px] rounded-lg px-4  mt-2 ${
                 error ? "border-red-400" : ""
               }`}
             />

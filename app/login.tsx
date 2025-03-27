@@ -99,7 +99,7 @@ export default function Login() {
         {/* Register Link */}
         <View className="flex-row justify-center gap-1 mt-6">
           <Text className="text-gray-600">Don't have an account? </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.replace("/signup")}>
             <Text className="text-primary font-semibold">Create Account</Text>
           </TouchableOpacity>
         </View>
