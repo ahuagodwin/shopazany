@@ -24,7 +24,7 @@ export default function Layout() {
             tabBarStyle: {
               position: "absolute",
               backgroundColor: "white",
-              borderTopWidth: 0,
+              borderTopWidth: 2,
               borderBottomWidth: 0,
               borderBottomColor: "white",
               shadowColor: "white",

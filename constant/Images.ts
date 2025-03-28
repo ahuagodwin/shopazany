@@ -11,4 +11,8 @@ export class Images {
     public static readonly HistoryIcon = require('@/assets/images/azany/icon/history.png');
     public static readonly RewardsIcon = require('@/assets/images/azany/icon/rewards.png');
     public static readonly CurrenciesIcon = require('@/assets/images/azany/icon/currencies.png');
+    public static readonly TickCircle = require('@/assets/images/azany/tick-circle.png');
+    public static readonly UserIcon = require('@/assets/images/azany/user.png');
+    public static readonly NigeriaFlag = require('@/assets/images/azany/nigeria_flag.png');
+    public static readonly FiirstBank = require('@/assets/images/azany/first_bank.png');
 }
